@@ -34,7 +34,9 @@ def retrieve_relevant_code(import_statements):
         return
 
     # Join import statements as the query
-    query = "Retrieve source code or functions that are related to the following modules:\n" + "\n".join(import_statements)
+    # query = "Retrieve source code or functions that are related to the following modules:\n" + "\n".join(import_statements)
+    query = "For the given import statements, retrieve the source code of each imported module and do not retrieve where these are getting used:\n" + "\n".join(import_statements)
+    # print(f"Query: {import_statements}")
     print(f"Query: {query}")
 
     query_embedding = vo.embed(
@@ -51,7 +53,7 @@ def retrieve_relevant_code(import_statements):
         n_results=5,  # Fetch up to 10 documents from ChromaDB
         include=["documents", "metadatas", "embeddings"]
     )
-    print(results)
+    print(results["documents"])
     # documents = [res["document"] for res in results["documents"]]
 
     # Use VoyageAI to rerank documents based on the query
