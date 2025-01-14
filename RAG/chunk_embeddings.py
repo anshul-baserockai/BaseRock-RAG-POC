@@ -8,7 +8,7 @@ from reading_file import fetch_project_files
 ROOT_FOLDER = "C:/Users/Anshul Ranjan/Downloads/BaseRock-RAG-POC"
 
 # Initialize VoyageAI client
-voyage_client =  voyageai.Client(api_key="pa-ovg02bjO4xPkHytVh8LpDI_4gKynVGJUHlwJcrBua_8")
+voyage_client =  voyageai.Client(api_key="")
 
 # Initialize ChromaDB client
 chroma_client = chromadb.PersistentClient(path="C:/Users/Anshul Ranjan/Downloads/RAG/ChromaDB")
