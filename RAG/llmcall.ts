@@ -5,7 +5,7 @@ async function sendPromptToClaude() {
     const claude = new ChatAnthropic({
         model: "claude-3-5-sonnet-latest",
         maxRetries: 2,
-        apiKey: "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",
+        apiKey: "",
         
     });
 
